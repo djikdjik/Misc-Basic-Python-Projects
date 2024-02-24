@@ -3,9 +3,9 @@ from pytube import Playlist
 from sys import argv
 
 #Gives download progress
-#def on_progress(stream, chunk, bytes_remaining):
-#    progress = f"{round(100 - (bytes_remaining/stream.filesize * 100),2)}%"
-#    print(f"progress: {progress}")
+def on_progress(stream, chunk, bytes_remaining):
+    progress = f"{round(100 - (bytes_remaining/stream.filesize * 100),2)}%"
+    print(f"progress: {progress}")
 
 #Do this on download completion
 def on_complete(stream, file_path):
