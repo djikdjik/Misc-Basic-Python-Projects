@@ -29,8 +29,10 @@ print("Downloading started...")
 #for every video in the playlist
 for vids in pl.videos:
     vid_url = vids.watch_url
-    yt = YouTube(url = vid_url, on_progress_callback=on_progress, on_complete_callback=on_complete)
+    yt = YouTube(url = vid_url, on_complete_callback=on_complete)
     yd = yt.streams.get_highest_resolution()
+    file_size = round((yd.filesize / 1000000), 2)
+    print(f"File Size: {file_size} MB")
     yd.download('C:/Users/dijk/Videos/youtube-py-downloads')
     remaining_video_count +=1
     print("\n")
